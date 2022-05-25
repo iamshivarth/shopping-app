@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 var SRC_DIR = path.resolve(__dirname, "src");
@@ -10,6 +11,7 @@ module.exports = {
     path: DIST_DIR,
     filename: "bundle.js",
   },
+  mode: "development",
   module: {
     rules: [
       {
@@ -19,6 +21,7 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|gif)$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: "file-loader",
@@ -43,5 +46,13 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./public/index.html",
     }),
+    new Dotenv(),
   ],
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "static"),
+      publicPath: "/static/",
+    },
+    historyApiFallback: true,
+  },
 };

@@ -1,0 +1,6 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 40px 0 0;
+}

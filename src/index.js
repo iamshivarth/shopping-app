@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/App.jsx";
+import { Provider } from "./Context.js";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App/App.jsx";
 import "./index.css";
-//import POO from "./components/POO";
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Router>
+    <Provider>
+      <App />
+    </Provider>
+  </Router>
+);

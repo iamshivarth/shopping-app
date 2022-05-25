@@ -3,20 +3,23 @@
   padding: 0;
 }
 
-hr {
+.navbar_hr {
   border: none;
   width: 100%;
+  margin: 0;
   border-bottom: 1px solid rgb(233, 231, 231);
   box-shadow: 0px 1px 5px 0px rgb(204, 202, 202);
 }
 
 .nav_bar {
-  margin: 0 150px;
   height: 100px;
   background-color: #fff;
 
   display: flex;
   align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav_bar .nav_left {
@@ -38,7 +41,8 @@ li {
   cursor: pointer;
 }
 
-.nav_center li {
+.nav_center li a {
+  color: darkgray;
   margin-left: 25px;
   font-weight: 600;
 }
@@ -57,8 +61,11 @@ li {
   display: flex;
 }
 
-.nav_right .user li {
+.nav_right .user li,
+.nav_right .user li a {
+  color: #000;
   margin-left: 18px;
+  font-weight: 600;
 }
 
 .nav_right .cart {
